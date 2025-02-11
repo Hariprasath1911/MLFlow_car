@@ -1,5 +1,5 @@
 import pandas as pd
-df=pd.read_excel("C:/Users/DINESH/Desktop/Data for DS/vscode/car/onlinemlflow/ml_dl.xlsx")
+df=pd.read_excel("ml_dl.xlsx")
 
 y=df["price"]
 x=df.drop("price",axis=1)
@@ -54,7 +54,6 @@ for model_name,params,model,train_set,test_set in models:
 
 import mlflow
 mlflow.set_experiment("Car_experiment_models")
-mlflow.set_tracking_uri("http://127.0.0.1:5001")
 for i,element in enumerate(models):
     model_name=element[0]
     params=element[1]
